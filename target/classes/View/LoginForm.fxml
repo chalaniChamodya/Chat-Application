@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoginFormController">
+<AnchorPane prefHeight="767.0" prefWidth="495.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoginFormController">
    <children>
-      <TextField fx:id="txtClientName" layoutX="104.0" layoutY="174.0" prefHeight="39.0" prefWidth="255.0" promptText="Enter Name" />
-      <Button fx:id="btnLogin" layoutX="423.0" layoutY="170.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="48.0" prefWidth="122.0" text="Login" />
+      <ImageView fitHeight="767.0" fitWidth="495.0">
+         <image>
+            <Image url="@../Assets/LoginPage.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="32.0" layoutY="461.0" prefHeight="32.0" prefWidth="206.0" text="Enter Your Name : " textFill="#42248d">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtClientName" layoutX="32.0" layoutY="493.0" prefHeight="48.0" prefWidth="435.0" promptText="Enter Name" style="-fx-background-radius: 10; -fx-background-color: white;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></TextField>
+      <Button fx:id="btnLogin" layoutX="169.0" layoutY="586.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="56.0" prefWidth="161.0" style="-fx-background-color: #0077c0; -fx-background-radius: 30;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font></Button>
+      <Label layoutX="187.0" layoutY="697.0" text="Play Tech Pvt Ltd." textFill="#42248d">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="158.0" layoutY="344.0" text="Live Chat !" textFill="#154865">
+         <font>
+            <Font name="FreeSans Bold" size="35.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

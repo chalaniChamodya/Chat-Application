@@ -25,7 +25,8 @@ public class ClientFormController {
     public TextField txtClientMsg;
     public Label lblClientName;
     public VBox vBoxLeft;
-    public VBox ImojiVBox;
+    //public VBox ImojiVBox;
+    public HBox emojiHBox;
     DataOutputStream dataOutputStream;
     DataInputStream dataInputStream;
     String username;
@@ -42,9 +43,15 @@ public class ClientFormController {
         username = lblClientName.getText();
 
         setImoji("\uD83D\uDE00");
-        setImoji("\uD83C\uDF1E");
+        //setImoji("\uD83C\uDF1E");
         setImoji("\u2764\ufe0f");
-        setImoji("\uD83D\uDC4D");
+        //setImoji("\uD83D\uDC4D");
+        setImoji("\uD83D\uDE02");
+        //setImoji("\uD83C\uDF3B");
+        //setImoji("\uD83D\uDC4D");
+        setImoji("\uD83C\uDFB5");
+        setImoji("\uD83D\uDC4E");
+        setImoji("\uD83D\uDD25");
     }
 
     private void setImoji(String imoji) {
@@ -54,8 +61,8 @@ public class ClientFormController {
 
         Label label = new Label();
         label.setText(inputString);
-        label.setPadding(new Insets(5,5,5,5));
-        ImojiVBox.getChildren().add(label);
+        label.setPadding(new Insets(10,10,10,10));
+        emojiHBox.getChildren().add(label);
 
         label.setOnMouseClicked(event ->{
             txtClientMsg.setText(inputString);
@@ -173,7 +180,7 @@ public class ClientFormController {
         }).start();
     }
 
-    public void btnSendOnAction(ActionEvent actionEvent) {
+    public void btnSendOnAction1(ActionEvent actionEvent) {
         try {
             dataOutputStream.writeUTF(username + "\n" +txtClientMsg.getText());
             dataOutputStream.flush();
@@ -197,7 +204,7 @@ public class ClientFormController {
         }
     }
 
-    public void btnImgOnAction(ActionEvent actionEvent) {
+    public void btnImageOnAction(ActionEvent actionEvent) {
         Label label = new Label();
         label.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
         label.setStyle("-fx-font-size: 14");
@@ -233,24 +240,5 @@ public class ClientFormController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private void ImgSend(File selectedFile) {
-
-
-            /*dataOutputStream.writeUTF(username +"\n" + selectedFile.toURI());
-            dataOutputStream.flush();
-
-            Image image = new Image(selectedFile.toURI().toString());
-            ImageView imageView = new ImageView(image);
-
-            HBox hBox = new HBox();
-            hBox.setAlignment(Pos.BASELINE_RIGHT);
-            hBox.prefWidth(10);
-            hBox.setPadding(new Insets(10,10,10,10));
-            hBox.getChildren().addAll(imageView);
-
-            vBoxLeft.getChildren().add(hBox);*/
-
     }
 }
